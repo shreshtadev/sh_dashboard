@@ -1,0 +1,24 @@
+{
+  "name": "dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@vendure/core": "^3.5.0",
+    "@vendure/dashboard": "3.5.0",
+    "@vendure/graphiql-plugin": "3.5.0",
+    "dotenv": "17.2.3"
+  },
+  "devDependencies": {
+    "@vendure/cli": "3.5.0",
+    "typescript": "5.8.2",
+    "vite": "^6.4.1"
+  },
+  "overrides": {
+    "@swc/core": "1.13.21"
+  }
+}
