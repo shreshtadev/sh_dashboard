@@ -13,7 +13,10 @@ export default defineConfig({
         resolve(__dirname, "./src/vendure-config.ts"),
       ),
       vendureConfigExport: "config",
-      api: { host: "http://127.0.0.1", port: 3000 },
+      api: {
+        host: process.env.VENDURE_API_HOST,
+        port: parseInt(process.env.VENDURE_API_PORT || "3000", 10),
+      },
       gqlOutputPath: resolve(__dirname, "./src/gql/"),
     }) as unknown as any,
   ],
