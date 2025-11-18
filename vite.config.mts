@@ -17,10 +17,7 @@ export default defineConfig({
         resolve(__dirname, "./src/vendure-config.ts"),
       ),
       vendureConfigExport: "config",
-      api: {
-        host: apiHost,
-        port: apiPort,
-      },
+      api: apiPort ? { host: apiHost, port: apiPort } : { host: apiHost },
       gqlOutputPath: resolve(__dirname, "./src/gql/"),
     }) as unknown as any,
   ],
