@@ -4,6 +4,10 @@ import { vendureDashboardPlugin } from "@vendure/dashboard/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
+const apiHost = process.env.VENDURE_API_HOST;
+const apiPort = process.env.VENDURE_API_PORT
+  ? parseInt(process.env.VENDURE_API_PORT, 10)
+  : undefined;
 export default defineConfig({
   base: "/dashboard",
   plugins: [
@@ -14,8 +18,8 @@ export default defineConfig({
       ),
       vendureConfigExport: "config",
       api: {
-        host: process.env.VENDURE_API_HOST,
-        port: parseInt(process.env.VENDURE_API_PORT || "3000", 10),
+        host: apiHost,
+        port: apiPort,
       },
       gqlOutputPath: resolve(__dirname, "./src/gql/"),
     }) as unknown as any,
