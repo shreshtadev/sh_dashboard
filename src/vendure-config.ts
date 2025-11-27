@@ -1,6 +1,7 @@
 import { join } from "node:path";
 import type { VendureConfig } from "@vendure/core";
 import { DashboardPlugin } from "@vendure/dashboard/plugin";
+
 export const config: VendureConfig = {
   apiOptions: {
     port: 3000,
@@ -15,8 +16,8 @@ export const config: VendureConfig = {
     tokenMethod: "bearer",
   },
   dbConnectionOptions: {
-    type: "mariadb",
-    database: "vendure", // can be dummy, not used by dashboard build
+    type: "sqlite",
+    database: ":memory:", // can be dummy, not used by dashboard build
     synchronize: false,
   },
   paymentOptions: {
